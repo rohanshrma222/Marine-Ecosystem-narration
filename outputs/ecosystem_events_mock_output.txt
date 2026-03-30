@@ -1,0 +1,44 @@
+======================================================================
+  GEMINI-POWERED ECOSYSTEM NARRATION  —  MOCK MODE
+  Input : data/ecosystem_events.json
+  Events: 19  |  Duration: 80.4s
+  Temp  : 27.3°C → 30.1°C  (Δ2.8°C)
+  Time  : 2026-03-30 11:16:22
+======================================================================
+
+NARRATION
+---------
+A rapid thermal spike of 2.8°C — from 27.3°C to 30.1°C — was the
+defining event of this simulation window, triggering cascading
+responses across multiple trophic levels. The elevated water
+temperature drove early bleaching stress indicators on staghorn coral,
+while the plankton bloom contracted sharply — a response consistent
+with thermal inhibition of phytoplankton growth. Overall, the
+ecosystem shows early warning signs of thermal degradation; sustained
+temperatures above 29°C will require monitoring for reef-wide
+bleaching in subsequent simulation windows.
+
+PROMPT USED (SYSTEM)
+--------------------
+You are a marine biologist narrating a real-time ecosystem simulation
+for a general science audience. You receive a structured JSON summary
+derived from simulation event data. Your task is to produce exactly
+2-4 sentences of fluent, scientifically grounded narration that:    1.
+Opens with the most ecologically significant event or trend.   2.
+Identifies at least one clear causal relationship (e.g. temperature
+change causing a population response).   3. Closes with the overall
+health or trajectory of the ecosystem.  Constraints:   - Use only data
+present in the JSON — do not invent organisms, numbers, or events.   -
+Do not use bullet points or headers. Plain prose only.   - Keep the
+total length between 60 and 120 words.   - Maintain scientific
+accuracy while remaining accessible to a non-specialist reader.
+
+PROMPT USED (USER — truncated state summary)
+--------------------------------------------
+Here is the summarised state of the marine ecosystem simulation:  {
+"total_events": 19,   "simulation_duration_s": 80.4,
+"population_trends": {     "clownfish": {       "start_count": 142,
+"end_count": 147,       "net_change": 5,       "start_temp": 27.3,
+"end_temp": 29.8     },     "shark": {       "start_count": 8,
+"end_count": 8,       "net_change": 0,       "start_temp":  [...]
+======================================================================

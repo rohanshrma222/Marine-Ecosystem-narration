@@ -1,0 +1,30 @@
+{
+  "simulation_id": "marine_sim_001",
+  "duration_seconds": 80.4,
+  "environment": {
+    "location": "Indo-Pacific Reef System",
+    "depth_m": 12,
+    "salinity_ppt": 35.1
+  },
+  "events": [
+    {"timestamp": 0.0,  "event_type": "population_snapshot", "species": "clownfish",     "count": 142,  "location": "reef_zone_A", "water_temp_c": 27.3, "notes": "baseline reading"},
+    {"timestamp": 0.0,  "event_type": "population_snapshot", "species": "shark",         "count": 8,    "location": "open_water",  "water_temp_c": 27.3, "notes": "baseline reading"},
+    {"timestamp": 0.0,  "event_type": "population_snapshot", "species": "plankton_bloom","count": 9400, "location": "surface",     "water_temp_c": 27.3, "notes": "moderate bloom"},
+    {"timestamp": 0.0,  "event_type": "population_snapshot", "species": "sea_turtle",    "count": 5,    "location": "reef_zone_B", "water_temp_c": 27.3, "notes": "baseline reading"},
+    {"timestamp": 12.5, "event_type": "predation_event",     "species": "shark",         "count": 1,    "location": "open_water",  "water_temp_c": 27.4, "notes": "shark hunted yellowfin tuna"},
+    {"timestamp": 25.0, "event_type": "population_snapshot", "species": "clownfish",     "count": 138,  "location": "reef_zone_A", "water_temp_c": 27.6, "notes": "slight decrease"},
+    {"timestamp": 25.0, "event_type": "population_snapshot", "species": "plankton_bloom","count": 11200,"location": "surface",     "water_temp_c": 27.6, "notes": "bloom expanding"},
+    {"timestamp": 30.1, "event_type": "spawn_event",         "species": "clownfish",     "count": 22,   "location": "reef_zone_A", "water_temp_c": 27.7, "notes": "spawning triggered near anemone cluster"},
+    {"timestamp": 45.0, "event_type": "temperature_change",  "species": "N/A",           "count": 0,    "location": "global",      "water_temp_c": 29.1, "notes": "sudden thermal spike detected"},
+    {"timestamp": 47.3, "event_type": "behavior_change",     "species": "sea_turtle",    "count": 5,    "location": "reef_zone_B", "water_temp_c": 29.2, "notes": "turtles migrating toward cooler deep water"},
+    {"timestamp": 50.0, "event_type": "population_snapshot", "species": "clownfish",     "count": 155,  "location": "reef_zone_A", "water_temp_c": 29.3, "notes": "population recovering post-spawn"},
+    {"timestamp": 50.0, "event_type": "population_snapshot", "species": "plankton_bloom","count": 8700, "location": "surface",     "water_temp_c": 29.3, "notes": "bloom shrinking due to heat"},
+    {"timestamp": 55.8, "event_type": "predation_event",     "species": "shark",         "count": 1,    "location": "reef_zone_A", "water_temp_c": 29.4, "notes": "shark entered reef — attacked juvenile clownfish"},
+    {"timestamp": 60.0, "event_type": "population_snapshot", "species": "clownfish",     "count": 149,  "location": "reef_zone_A", "water_temp_c": 29.5, "notes": "minor predation loss"},
+    {"timestamp": 60.0, "event_type": "population_snapshot", "species": "plankton_bloom","count": 7200, "location": "surface",     "water_temp_c": 29.6, "notes": "continued decline"},
+    {"timestamp": 62.0, "event_type": "environmental_event", "species": "coral",         "count": 0,    "location": "reef_zone_A", "water_temp_c": 30.1, "notes": "early bleaching stress indicators on staghorn coral"},
+    {"timestamp": 75.0, "event_type": "population_snapshot", "species": "clownfish",     "count": 147,  "location": "reef_zone_A", "water_temp_c": 29.8, "notes": "stabilising"},
+    {"timestamp": 75.0, "event_type": "population_snapshot", "species": "plankton_bloom","count": 7900, "location": "surface",     "water_temp_c": 29.5, "notes": "slight recovery as temp drops"},
+    {"timestamp": 80.4, "event_type": "spawn_event",         "species": "sea_turtle",    "count": 12,   "location": "reef_zone_B", "water_temp_c": 29.4, "notes": "turtle nest event recorded on substrate"}
+  ]
+}

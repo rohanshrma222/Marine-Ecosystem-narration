@@ -1,0 +1,23 @@
+timestamp,event_type,species,count,location,water_temp_c,notes
+0.0,population_snapshot,clownfish,142,reef_zone_A,27.3,baseline reading
+0.0,population_snapshot,shark,8,open_water,27.3,baseline reading
+0.0,population_snapshot,plankton_bloom,9400,surface,27.3,moderate bloom
+0.0,population_snapshot,sea_turtle,5,reef_zone_B,27.3,baseline reading
+12.5,predation_event,shark,1,open_water,27.4,shark hunted yellowfin tuna
+25.0,population_snapshot,clownfish,138,reef_zone_A,27.6,slight decrease
+25.0,population_snapshot,shark,8,open_water,27.6,stable
+25.0,population_snapshot,plankton_bloom,11200,surface,27.6,bloom expanding
+30.1,spawn_event,clownfish,22,reef_zone_A,27.7,spawning triggered near anemone cluster
+45.0,temperature_change,N/A,0,global,29.1,sudden thermal spike detected
+47.3,behavior_change,sea_turtle,5,reef_zone_B,29.2,turtles migrating toward cooler deep water
+50.0,population_snapshot,clownfish,155,reef_zone_A,29.3,population recovering post-spawn
+50.0,population_snapshot,shark,7,open_water,29.3,one shark left zone
+50.0,population_snapshot,plankton_bloom,8700,surface,29.3,bloom shrinking due to heat
+55.8,predation_event,shark,1,reef_zone_A,29.4,shark entered reef — attacked juvenile clownfish
+60.0,population_snapshot,clownfish,149,reef_zone_A,29.5,minor predation loss
+60.0,population_snapshot,plankton_bloom,7200,surface,29.6,continued decline
+62.0,environmental_event,coral,0,reef_zone_A,30.1,early bleaching stress indicators on staghorn coral
+75.0,population_snapshot,clownfish,147,reef_zone_A,29.8,stabilising
+75.0,population_snapshot,shark,7,open_water,29.7,returned to open water
+75.0,population_snapshot,plankton_bloom,7900,surface,29.5,slight recovery as temp drops
+80.4,spawn_event,sea_turtle,12,reef_zone_B,29.4,turtle nest event recorded on substrate
