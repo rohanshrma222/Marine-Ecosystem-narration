@@ -1,7 +1,7 @@
 # Gemini-Powered Ecosystem Narration — Entry Task
 
 A Python script that reads marine ecosystem simulation events (CSV or JSON)
-and produces a **2–4 sentence scientific narration** using the Gemini 1.5 Pro
+and produces a **2–4 sentence scientific narration** using the Gemini 2.0 Flash
 API. A fully deterministic **mock mode** is included so the script runs
 end-to-end without any API key.
 
@@ -12,12 +12,14 @@ end-to-end without any API key.
 ```
 ecosystem-narration/
 ├── ecosystem_narrator.py        # Main script
+├── .env                         # Your API key goes here (never push this)
+├── .env.example                 # Safe template to share on GitHub
+├── .gitignore                   # Keeps .env out of git
 ├── data/
 │   ├── ecosystem_events.csv     # Sample events (CSV)
 │   └── ecosystem_events.json    # Same events (JSON envelope)
 ├── outputs/
-│   ├── ecosystem_events_mock_output.txt    # Pre-generated mock output (CSV input)
-│   └── ecosystem_events_json_mock_output.txt
+│   └── ecosystem_events_mock_output.txt    # Pre-generated mock output
 ├── tests/
 │   └── test_narrator.py         # Unit tests (no API key needed)
 └── README.md
@@ -27,17 +29,41 @@ ecosystem-narration/
 
 ## Requirements
 
-- Python 3.10 or later (uses `list[dict]` type hints)
+- Python 3.10 or later
 - No third-party packages needed for mock mode
-- `google-generativeai` only required for live Gemini mode:
+- For live Gemini mode, install both:
 
 ```bash
-pip install google-generativeai
+pip install google-genai python-dotenv
 ```
 
 ---
 
-## Quickstart — mock mode (no API key)
+## Setting up your API key
+
+This project uses a `.env` file to store your API key — the same pattern
+used in Node.js projects. You only set it once and never have to type it
+in the command line again.
+
+**Step 1 — Get a free API key**
+
+Go to [aistudio.google.com](https://aistudio.google.com), sign in, and click
+**"Get API Key"**.
+
+**Step 2 — Create a `.env` file** in the project root folder:
+
+```
+GEMINI_API_KEY=your_key_here
+```
+
+**Step 3 — Never push `.env` to GitHub**
+
+The `.gitignore` already blocks it. There is also a `.env.example` file in
+the repo that shows the format without any real key — that one is safe to push.
+
+---
+
+## Quickstart — mock mode (no API key needed)
 
 ```bash
 python ecosystem_narrator.py --input data/ecosystem_events.csv --mock
@@ -57,18 +83,24 @@ python ecosystem_narrator.py --input data/ecosystem_events.csv --mock --save-out
 
 ## Live Gemini mode
 
-Set your API key as an environment variable (recommended):
+Once your `.env` file is set up, just run:
 
 ```bash
-export GEMINI_API_KEY="your-key-here"
 python ecosystem_narrator.py --input data/ecosystem_events.csv
 ```
 
-Or pass it directly:
+No `--api-key` flag needed. The script reads `GEMINI_API_KEY` from `.env`
+automatically via `python-dotenv`.
+
+You can still pass a key directly on the command line if you prefer — it
+will override the `.env` value:
 
 ```bash
 python ecosystem_narrator.py --input data/ecosystem_events.csv --api-key YOUR_KEY
 ```
+
+If no key is found anywhere and `--mock` is not set, the script automatically
+falls back to mock mode and prints a notice.
 
 ---
 
@@ -78,11 +110,8 @@ python ecosystem_narrator.py --input data/ecosystem_events.csv --api-key YOUR_KE
 |---|---|---|
 | `--input PATH` | `-i` | Path to `.csv` or `.json` event file (required) |
 | `--mock` | `-m` | Use deterministic mock instead of Gemini API |
-| `--api-key KEY` | `-k` | Gemini API key (overrides `GEMINI_API_KEY` env var) |
+| `--api-key KEY` | `-k` | Gemini API key (overrides `.env` and env var) |
 | `--save-output` | `-s` | Save formatted result to `outputs/` directory |
-
-If no API key is found and `--mock` is not set, the script automatically
-falls back to mock mode and prints a notice.
 
 ---
 
@@ -100,7 +129,7 @@ summarise_state()      — condense to compact JSON (population trends,
        ▼
 build_user_prompt()    — inject summary into prompt template
        │
-       ├─── API key present? ──► call_gemini()  → Gemini 1.5 Pro response
+       ├─── API key present? ──► call_gemini()  → Gemini 2.0 Flash response
        │
        └─── mock mode? ────────► call_mock()    → template-driven narration
                                                    (same logical constraints

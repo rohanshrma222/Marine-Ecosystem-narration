@@ -15,7 +15,8 @@ Usage:
     python ecosystem_narrator.py --input data/ecosystem_events.csv --api-key YOUR_KEY
     python ecosystem_narrator.py --input data/ecosystem_events.csv --save-output
 """
-
+from dotenv import load_dotenv
+load_dotenv()
 import argparse
 import csv
 import json
